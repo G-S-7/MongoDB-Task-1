@@ -1,0 +1,22 @@
+1. db.students.insertOne({name:"Priya", age: 19, course: "B.Sc"});
+2. db.employees.insertMany([{ename:"Priya", sal: 3000, deptno: 10}, {ename: "Raman", sal: 2000, deptno: 5}]);
+3. db.products.find();
+4. db.users.find({age: {$gt: 25 }});
+5. db.orders.find({status: {$in: ['pending', 'shipped']}});
+6. db.users.updateOne({username:"john_doe"}, {$set: {email:'john@gmail.com'}});
+7. db.students.deleteOne({roll: 101});
+8. db.employees.find({sal: {$gte: 30000}});
+9. db.books.find({author:"Chetan Bhagat", publishedYear:{$gt: 2010}});
+10. db.customers.find({city: "Delhi"}).count();
+	or db.customers.countDocuments({city: "Delhi"});
+11. db.users.find().limit(5);
+12. db.logs.find().skip(10).limit(5);
+13. db.products.find().sort({price: -1});
+14. db.users.find().sort({createdAt: -1});
+15. db.users.find({}, {_id:0, name:1, email:1})
+16. db.students.find({$and: [{marks:{$gt: 60}}, {marks:{$lt: 90}}]})
+	or db.students.find({marks: {$gt: 60, $lt: 90}})
+17. db.sales.find({$or: [{amount:{$lt:500}}, {amount:{$gt:5000}}]})
+18. db.orders.updateMany({deliveryDate: {$ne: null}}, {$set: {status:"completed"}})
+19. db.users.deleteMany({active:false})
+20. db.users.find({$or: [{city: "Bangalore"}, {age:{$gt: 30}}]})
